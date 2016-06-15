@@ -1,4 +1,4 @@
-@import 'bower_components/vui-typography/small-text.scss';
+@import 'bower_components/d2l-colors/d2l-colors.scss';
 
 @mixin vui-image-action-list() {
 	list-style: none;
@@ -36,7 +36,13 @@
 	text-decoration: none;
 
 	>span {
-		@include vui-typography-small-text;
+		color: $d2l-color-ferrite;
+		font-family: inherit;
+		font-size: 0.7rem;
+		font-weight: 400;
+		line-height: 1rem;
+		letter-spacing: 0.02rem;
+		margin: 1rem 0 1rem 0;
 		padding-left: 0.5rem;
 		text-decoration: none;
 		vertical-align: middle;

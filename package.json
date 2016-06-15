@@ -1,6 +1,6 @@
 {
   "name": "vui-image-action",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Mixins and CSS for applying image action styles",
   "repository": {
     "type": "git",
@@ -8,9 +8,8 @@
   },
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "npm run build:styles && npm run build:docs",
+    "build": "npm run build:styles",
     "build:styles": "node-sass --output-style expanded image-action.css.scss image-action.css && cp image-action.css ./test",
-    "build:docs": "node-sass --output-style expanded ./screenshots/screenshots.scss ./test/screenshots.css && npm run snapshot",
     "clean": "rimraf image-action.css ./test/*.css",
     "postinstall": "bower install",
     "snapshot": "phantomjs ./screenshots/build.js",

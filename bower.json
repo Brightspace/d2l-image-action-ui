@@ -10,6 +10,6 @@
     "test"
   ],
   "dependencies": {
-    "vui-typography": "~2.0.0"
+    "d2l-colors": "~2.0.0"
   }
 }
