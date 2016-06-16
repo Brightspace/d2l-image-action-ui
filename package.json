@@ -4,7 +4,7 @@
   "description": "Mixins and CSS for applying image action styles",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Brightspace/valence-ui-image-action.git"
+    "url": "https://github.com/Brightspace/d2l-image-action-ui.git"
   },
   "scripts": {
     "prebuild": "npm run clean",

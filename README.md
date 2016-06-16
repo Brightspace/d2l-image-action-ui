@@ -89,7 +89,7 @@ See the [VUI Best Practices & Style Guide](https://github.com/Brightspace/valenc
 [bower-image]: https://img.shields.io/bower/v/vui-image-action.svg
 [npm-url]: https://www.npmjs.org/package/vui-image-action
 [npm-image]: https://img.shields.io/npm/v/vui-image-action.svg
-[ci-url]: https://travis-ci.org/Brightspace/valence-ui-image-action
-[ci-image]: https://travis-ci.org/Brightspace/valence-ui-image-action.svg?branch=master
-[dependencies-url]: https://david-dm.org/brightspace/valence-ui-image-action
-[dependencies-image]: https://img.shields.io/david/Brightspace/valence-ui-image-action.svg
+[ci-url]: https://travis-ci.org/Brightspace/d2l-image-action-ui
+[ci-image]: https://travis-ci.org/Brightspace/d2l-image-action-ui.svg?branch=master
+[dependencies-url]: https://david-dm.org/brightspace/d2l-image-action-ui
+[dependencies-image]: https://img.shields.io/david/Brightspace/d2l-image-action-ui.svg
