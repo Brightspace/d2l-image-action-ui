@@ -1,6 +1,6 @@
 {
-  "name": "vui-image-action",
-  "version": "0.3.0",
+  "name": "d2l-image-action",
+  "private": true,
   "description": "Mixins and CSS for applying image action styles",
   "repository": {
     "type": "git",
@@ -17,22 +17,13 @@
     "pretest": "npm run build",
     "test": "csslint image-action.css"
   },
-  "keywords": [
-    "d2l",
-    "valence-ui",
-    "vui",
-    "icon",
-    "action"
-  ],
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "devDependencies": {
+    "bower": "^1.7.7",
     "csslint": "^0.10.0",
     "node-sass": "^3.4.2",
     "phantomjs-prebuilt": "^2.1.4",
     "rimraf": "^2.4.4"
-  },
-  "dependencies": {
-    "bower": "^1.7.7"
   }
 }
