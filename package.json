@@ -13,7 +13,6 @@
     "clean": "rimraf image-action.css ./test/*.css",
     "postinstall": "bower install",
     "snapshot": "phantomjs ./screenshots/build.js",
-    "perceptual-diff": "percy snapshot test/",
     "pretest": "npm run build",
     "test": "csslint image-action.css"
   },
