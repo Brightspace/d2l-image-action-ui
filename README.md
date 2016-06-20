@@ -1,95 +1,85 @@
-# vui-image-action
+**Looking for SASS-based `d2l-image-action`?** It's [over here](https://github.com/Brightspace/d2l-image-action-ui/tree/sass).
+
+# d2l-image-action
 [![Bower version][bower-image]][bower-url]
-[![NPM version][npm-image]][npm-url]
 [![Build status][ci-image]][ci-url]
-[![Dependency Status][dependencies-image]][dependencies-url]
 
-This component contains [SASS mixins](http://sass-lang.com/) and CSS that you can use to style image actions.
+A [Polymer](https://www.polymer-project.org/1.0/)-based web component for D2L image actions, which are buttons (or links) associated with an image that perform an action when clicked.
 
-An Image Action is a link associated with an image that performs an action when clicked.
+![screenshot of image actions](/screenshot.png)
 
-![screenshot of image actions](/screenshots/multiple.png)
-
+For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
 
 ## Installation
 
-`vui-image-action` can be installed from [Bower][bower-url]:
+`d2l-image-action` can be installed from [Bower][bower-url]:
 ```shell
-bower install vui-image-action
-```
-
-Or alternatively from [NPM][npm-url]:
-```shell
-npm install vui-image-action
-```
-
-Depending on which installation method you choose, use that path when doing the SASS import:
-
-```scss
-@import 'bower_components/vui-image-action/image-action.scss';
-// or...
-@import "node_modules/vui-image-action/image-action.scss";
+bower install d2l-image-action
 ```
 
 ## Usage
 
-An Image Action must have a `<img>` element for the image, and a `<span>` element describing the action. These elements should be enclosed in a `<a>` that performs the action when clicked.
+Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-image-action.html`:
 
-HTML:
 ```html
-<a href="#">
-	<img src="img/help.svg" alt="">
-	<span>Action</span>
-</a>
+<head>
+	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents-lite.min.js"></script>
+	<link rel="import" href="../d2l-image-action/d2l-image-action.html">
+</head>
 ```
 
-SCSS:
-```scss
-a {
-	@include vui-image-action;
-}
-```
+The native `<button>` element can now be extended to become an image-action:
 
-Multiple Image Actions can be grouped in a list.
-
-HTML:
 ```html
-<ul>
-	<li>
-		<a href="#">
-			<img src="img/print.svg" alt="">
-			<span>Print</span>
-		</a>
-	</li>
-	<li>
-		<a href="#">
-			<img src="img/settings.svg" alt="">
-			<span>Settings</span>
-		</a>
-	</li>
-</ul>
-```
-SCSS:
-```scss
-ul {
-	@include vui-image-action-list;
-}
-a {
-	@include vui-image-action;
-}
+<button is="d2l-image-action">Print</button>
 ```
 
+### Icons
 
-For further information on this component and other VUI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
+As their name suggests, image-actions are intended to be used with an icon, specifically one which is `18px` by `18px` in size. To set the icon, use the `icon` attribute, which takes a reference to a [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg) source.
 
-#### Coding styles
-See the [VUI Best Practices & Style Guide](https://github.com/Brightspace/valence-ui-docs/wiki/Best-Practices-&-Style-Guide) for information on VUI naming conventions, plus information about the [EditorConfig](http://editorconfig.org) rules used in this repo.
+The [d2l-icons](https://github.com/Brightspace/d2l-icons-ui) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the the `tier1` category (for 18x18 icons) and reference them by key:
 
-[bower-url]: http://bower.io/search/?q=vui-image-action
-[bower-image]: https://img.shields.io/bower/v/vui-image-action.svg
-[npm-url]: https://www.npmjs.org/package/vui-image-action
-[npm-image]: https://img.shields.io/npm/v/vui-image-action.svg
+```html
+<link rel="import" href="../d2l-icons/tier1-icons.html">
+<button is="d2l-image-action" icon="d2l-tier1:print">Print</button>
+```
+
+You can also create your own custom icon set -- simply follow [Polymer's documentation](https://github.com/PolymerElements/iron-iconset-svg).
+
+### Link-based actions
+
+Most of the time, image-actions are wired up to a `click` event, so the native `<button>` is the most semantically suitable element to use. Sometimes however, you may wish to perform a browser navigation when the action is clicked. In these cases, an anchor (`<a>`) element is more appropriate.
+
+In these cases, extend the native `<a>` element with `d2l-image-action-link`:
+
+```html
+<a is="d2l-image-action-link"
+	href="settings.html"
+	icon="d2l-tier1:gear">Settings</a>
+```
+
+### Groups of image-actions
+
+Often, multiple image-actions will appear together as a group. In order to properly space the actions out, wrap them in a `<d2l-image-action-group>` custom element:
+
+```html
+<d2l-image-action-group>
+	<button is="d2l-image-action">Action 1</button>
+	<a is="d2l-image-action-link">Action 2</a>
+	<button is="d2l-image-action">Action 3</button>
+</d2l-image-action-gorup>
+```
+
+### Usage in Production
+
+In production, it's recommended to use a build tool like [Vulcanize](https://github.com/Polymer/vulcanize) to combine all your web components into a single import file. [More from the Polymer Docs: Optimize for Production](https://www.polymer-project.org/1.0/tools/optimize-for-production.html)...
+
+## Coding styles
+
+See the [Best Practices & Style Guide](https://github.com/Brightspace/valence-ui-docs/wiki/Best-Practices-&-Style-Guide) for information on naming conventions, plus information about the [EditorConfig](http://editorconfig.org) rules used in this repo.
+
+[bower-url]: http://bower.io/search/?q=d2l-image-action
+[bower-image]: https://img.shields.io/bower/v/d2l-image-action.svg
 [ci-url]: https://travis-ci.org/Brightspace/d2l-image-action-ui
 [ci-image]: https://travis-ci.org/Brightspace/d2l-image-action-ui.svg?branch=master
-[dependencies-url]: https://david-dm.org/brightspace/d2l-image-action-ui
-[dependencies-image]: https://img.shields.io/david/Brightspace/d2l-image-action-ui.svg

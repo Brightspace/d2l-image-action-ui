@@ -1,0 +1,32 @@
+<link rel="import" href="../polymer/polymer.html">
+<dom-module id="d2l-image-action-group">
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+				line-height: 0;
+			}
+			:host ::content > button[is="d2l-image-action"],
+			:host ::content > a[is="d2l-image-action-link"] {
+				margin-right: 1.5rem;
+			}
+			:host ::content > *:last-child {
+				margin-right: 0;
+			}
+			:host-context([dir="rtl"]) ::content button[is="d2l-image-action"],
+			:host-context([dir="rtl"]) ::content a[is="d2l-image-action-link"] {
+				margin-right: 0;
+				margin-left: 1.5rem;
+			}
+			:host-context([dir="rtl"]) ::content *:last-child {
+				margin-left: 0;
+			}
+		</style>
+		<content></content>
+	</template>
+	<script>
+		Polymer({
+			is: 'd2l-image-action-group'
+		});
+	</script>
+</dom-module>

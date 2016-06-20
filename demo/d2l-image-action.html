@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>d2l-image-action</title>
+	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents.min.js"></script>
+	<script>
+		//window.Polymer = window.Polymer || {};
+		//window.Polymer.dom = 'shadow';
+	</script>
+	<link rel="import" href="../d2l-image-action.html">
+	<link rel="import" href="../../d2l-icons/tier1-icons.html">
+	<style>
+		@import url(https://s.brightspace.com/lib/fonts/0.3.0/fonts.css);
+		html {
+			font-size: 20px;
+		}
+		body {
+			font-family: 'Lato', sans-serif;
+			line-height: 1.5;
+			margin: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<d2l-image-action-group>
+		<button is="d2l-image-action" icon="d2l-tier1:print">Print</button>
+		<a is="d2l-image-action-link" icon="d2l-tier1:gear" href="http://www.google.ca">Settings</a>
+		<button is="d2l-image-action" icon="d2l-tier1:help">Help</button>
+	</d2l-image-action-group>
+</body>
+</html>
