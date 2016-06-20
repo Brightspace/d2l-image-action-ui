@@ -1,15 +1,28 @@
 {
-  "name": "vui-image-action",
-  "main": "image-action.scss",
+  "name": "d2l-image-action",
+  "description": "Polymer-based web components for D2L image-actions",
+  "main": "d2l-image-action.html",
   "license": "Apache-2.0",
+  "keywords": [
+    "d2l",
+    "ui",
+    "image-action",
+    "web component",
+    "polymer"
+  ],
   "ignore": [
     ".editorconfig",
     ".gitignore",
-    ".npmignore",
-    "package.json",
-    "test"
+    ".travis.yml",
+    "package.json"
   ],
   "dependencies": {
-    "d2l-colors": "~2.0.0"
+    "d2l-colors": "~2.0.0",
+    "d2l-typography": "~4.0.0",
+    "polymer": "Polymer#^1.5.0",
+    "iron-icon": "^1.0.8"
+  },
+  "devDependencies": {
+    "d2l-icons": "~2.1.0"
   }
 }
