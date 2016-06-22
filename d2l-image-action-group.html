@@ -10,16 +10,18 @@
 			:host ::content > a[is="d2l-image-action-link"] {
 				margin-right: 1.5rem;
 			}
-			:host ::content > *:last-child {
+			:host ::content > button[is="d2l-image-action"]:last-child,
+			:host ::content > a[is="d2l-image-action-link"]:last-child {
 				margin-right: 0;
 			}
-			:host-context([dir="rtl"]) ::content button[is="d2l-image-action"],
-			:host-context([dir="rtl"]) ::content a[is="d2l-image-action-link"] {
-				margin-right: 0;
-				margin-left: 1.5rem;
+			:host-context([dir="rtl"]) ::content > button[is="d2l-image-action"],
+			:host-context([dir="rtl"]) ::content > a[is="d2l-image-action-link"] {
+				margin-right: 0 !important;
+				margin-left: 1.5rem !important;
 			}
-			:host-context([dir="rtl"]) ::content *:last-child {
-				margin-left: 0;
+			:host-context([dir="rtl"]) ::content > button[is="d2l-image-action"]:last-child,
+			:host-context([dir="rtl"]) ::content > a[is="d2l-image-action-link"]:last-child {
+				margin-left: 0 !important;
 			}
 		</style>
 		<content></content>
