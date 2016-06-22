@@ -38,7 +38,7 @@ The native `<button>` element can now be extended to become an image-action:
 
 As their name suggests, image-actions are intended to be used with an icon, specifically one which is `18px` by `18px` in size. To set the icon, use the `icon` attribute, which takes a reference to a [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg) source.
 
-The [d2l-icons](https://github.com/Brightspace/d2l-icons-ui) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the the `tier1` category (for 18x18 icons) and reference them by key:
+The [d2l-icons](https://github.com/Brightspace/d2l-icons-ui) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the `tier1` category (for 18x18 icons) and reference them by key:
 
 ```html
 <link rel="import" href="../d2l-icons/tier1-icons.html">
@@ -51,7 +51,7 @@ You can also create your own custom icon set -- simply follow [Polymer's documen
 
 Most of the time, image-actions are wired up to a `click` event, so the native `<button>` is the most semantically suitable element to use. Sometimes however, you may wish to perform a browser navigation when the action is clicked. In these cases, an anchor (`<a>`) element is more appropriate.
 
-In these cases, extend the native `<a>` element with `d2l-image-action-link`:
+For link-based actions, extend the native `<a>` element with `d2l-image-action-link`:
 
 ```html
 <a is="d2l-image-action-link"
