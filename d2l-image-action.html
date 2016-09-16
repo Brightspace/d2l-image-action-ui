@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../d2l-icons/d2l-icon.html">
 <link rel="import" href="d2l-image-action-shared-styles.html">
 <link rel="import" href="d2l-image-action-link.html">
 <link rel="import" href="d2l-image-action-group.html">
@@ -30,7 +31,7 @@
 				@apply(--d2l-image-action-icon-hover);
 			}
 		</style>
-		<iron-icon icon="[[icon]]" src="[[iconSrc]]" class="d2l-image-action-icon"></iron-icon><!--
+		<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon><!--
 		--><span class="d2l-image-action-content"><content></content></span>
 	</template>
 	<script>
@@ -38,8 +39,7 @@
 			is: 'd2l-image-action',
 			extends: 'button',
 			properties: {
-				icon: String,
-				iconSrc: String
+				icon: String
 			}
 		});
 	</script>
