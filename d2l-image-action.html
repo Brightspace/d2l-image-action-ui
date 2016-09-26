@@ -9,6 +9,10 @@
 			:host {
 				@apply(--d2l-image-action);
 			}
+			/* Firefox includes a hidden border which messes up button dimensions */
+			:host(::-moz-focus-inner) {
+				border: 0;
+			}
 			:host(:hover),
 			:host(:focus) {
 				@apply(--d2l-image-action-hover);
