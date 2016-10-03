@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "test": "polylint"
+    "test": "polylint --no-recursion"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
