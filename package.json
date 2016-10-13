@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Brightspace/d2l-image-action-ui.git"
+    "url": "https://github.com/BrightspaceUI/image-action.git"
   },
   "scripts": {
     "postinstall": "bower install",
