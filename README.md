@@ -1,4 +1,4 @@
-**Looking for SASS-based `d2l-image-action`?** It's [over here](https://github.com/Brightspace/d2l-image-action-ui/tree/sass).
+**Looking for SASS-based `d2l-image-action`?** It's [over here](https://github.com/BrightspaceUI/image-action/tree/sass).
 
 # d2l-image-action
 [![Bower version][bower-image]][bower-url]
@@ -38,7 +38,7 @@ The native `<button>` element can now be extended to become an image-action:
 
 As their name suggests, image-actions are intended to be used with an icon, specifically one which is `18px` by `18px` in size. To set the icon, use the `icon` attribute, which takes a reference to a [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg) source.
 
-The [d2l-icons](https://github.com/Brightspace/d2l-icons-ui) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the `tier1` category (for 18x18 icons) and reference them by key:
+The [d2l-icons](https://github.com/BrightspaceUI/icons) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the `tier1` category (for 18x18 icons) and reference them by key:
 
 ```html
 <link rel="import" href="../d2l-icons/tier1-icons.html">
@@ -81,5 +81,5 @@ See the [Best Practices & Style Guide](https://github.com/Brightspace/valence-ui
 
 [bower-url]: http://bower.io/search/?q=d2l-image-action
 [bower-image]: https://img.shields.io/bower/v/d2l-image-action.svg
-[ci-url]: https://travis-ci.org/Brightspace/d2l-image-action-ui
-[ci-image]: https://travis-ci.org/Brightspace/d2l-image-action-ui.svg?branch=master
+[ci-url]: https://travis-ci.org/BrightspaceUI/image-action
+[ci-image]: https://travis-ci.org/BrightspaceUI/image-action.svg?branch=master
