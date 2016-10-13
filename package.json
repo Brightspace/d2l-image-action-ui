@@ -7,12 +7,17 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "test": "polylint --no-recursion"
+    "test:lint:html": "eslint *.html demo/*.html",
+    "test:lint:wc": "polymer lint -i d2l-image-action.html d2l-image-action-link.html d2l-image-action-group.html",
+    "test": "npm run test:lint:wc && npm run test:lint:html"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "devDependencies": {
     "bower": "^1.7.9",
-    "polylint": "^2.10.1"
+    "eslint": "^3.7.1",
+    "eslint-config-brightspace": "^0.2.4",
+    "eslint-plugin-html": "^1.5.3",
+    "polymer-cli": "^0.16.0"
   }
 }
