@@ -4,7 +4,7 @@
 <link rel="import" href="d2l-image-action-link.html">
 <link rel="import" href="d2l-image-action-group.html">
 <dom-module id="d2l-image-action">
-	<template>
+	<template strip-whitespace>
 		<style include="d2l-image-action-shared-styles">
 			:host {
 				@apply(--d2l-image-action);
@@ -35,8 +35,8 @@
 				@apply(--d2l-image-action-icon-hover);
 			}
 		</style>
-		<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon><!--
-		--><span class="d2l-image-action-content"><content></content></span>
+		<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
+		<span class="d2l-image-action-content"><content></content></span>
 	</template>
 	<script>
 		Polymer({
