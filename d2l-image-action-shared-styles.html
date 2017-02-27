@@ -3,14 +3,14 @@
 <link rel="import" href="../d2l-typography/d2l-typography-shared-styles.html">
 <dom-module id="d2l-image-action-shared-styles">
 	<template>
-		<style include="d2l-typography-shared-styles">
+		<style>
 			:host {
 				--d2l-image-action: {
 					background-color: transparent;
 					border: none;
 					cursor: pointer;
 					display: inline-block;
-					font-family: inherit;
+					font-family: inherit; /* issue with native CSS props: https://github.com/Polymer/polymer/issues/4282 */
 					font-size: inherit;
 					line-height: 0;
 					margin: 0;
@@ -21,7 +21,7 @@
 					outline-style: none;
 				};
 				--d2l-image-action-content: {
-					@apply(--d2l-body-small-text);
+					@apply --d2l-body-small-text;
 					color: var(--d2l-color-ferrite);
 					transition: color 0.3s ease;
 					vertical-align: middle;

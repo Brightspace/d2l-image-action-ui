@@ -7,7 +7,7 @@
 	<template strip-whitespace>
 		<style include="d2l-image-action-shared-styles">
 			:host {
-				@apply(--d2l-image-action);
+				@apply --d2l-image-action;
 			}
 			/* Firefox includes a hidden border which messes up button dimensions */
 			:host(::-moz-focus-inner) {
@@ -15,24 +15,24 @@
 			}
 			:host(:hover),
 			:host(:focus) {
-				@apply(--d2l-image-action-hover);
+				@apply --d2l-image-action-hover;
 			}
 			:host > .d2l-image-action-content {
-				@apply(--d2l-image-action-content);
+				@apply --d2l-image-action-content;
 			}
 			:host(:hover) > .d2l-image-action-content,
 			:host(:focus) > .d2l-image-action-content {
-				@apply(--d2l-image-action-content-hover);
+				@apply --d2l-image-action-content-hover;
 			}
 			.d2l-image-action-icon {
-				@apply(--d2l-image-action-icon);
+				@apply --d2l-image-action-icon;
 			}
 			:host-context([dir="rtl"]) .d2l-image-action-icon {
-				@apply(--d2l-image-action-icon-rtl);
+				@apply --d2l-image-action-icon-rtl;
 			}
 			:host(:hover) .d2l-image-action-icon,
 			:host(:focus) .d2l-image-action-icon {
-				@apply(--d2l-image-action-icon-hover);
+				@apply --d2l-image-action-icon-hover;
 			}
 		</style>
 		<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
