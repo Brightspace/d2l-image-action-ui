@@ -17,12 +17,12 @@
     "package.json"
   ],
   "dependencies": {
-    "d2l-colors": "^2.2.3",
+    "d2l-colors": "^2.4.0",
     "d2l-icons": "^3.1.0",
     "d2l-typography": "^5.3.0",
-    "polymer": "^1.7.0"
+    "polymer": "^1.9.0"
   },
   "devDependencies": {
-    "d2l-demo-template": "~0.0.8"
+    "d2l-demo-template": "^0.0.9"
   }
 }
