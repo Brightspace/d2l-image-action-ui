@@ -4,11 +4,11 @@
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
-A [Polymer](https://www.polymer-project.org/1.0/)-based web component for D2L image actions, which are buttons (or links) associated with an image that perform an action when clicked.
+[Polymer](https://www.polymer-project.org/1.0/)-based web component for D2L image actions, which are buttons or links associated with an image that perform an action when clicked.
 
 ![screenshot of image actions](/screenshot.gif)
 
-For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
+For further information on this and other Brightspace UI components, see the docs at [ui.developers.brightspace.com](http://ui.developers.brightspace.com/).
 
 ## Installation
 
