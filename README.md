@@ -1,6 +1,7 @@
 **Looking for SASS-based `d2l-image-action`?** It's [over here](https://github.com/BrightspaceUI/image-action/tree/sass).
 
 # d2l-image-action
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/BrightspaceUI/image-action)
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
@@ -94,6 +95,6 @@ npm run lint
 ```
 
 [bower-url]: http://bower.io/search/?q=d2l-image-action
-[bower-image]: https://img.shields.io/bower/v/d2l-image-action.svg
+[bower-image]: https://badge.fury.io/bo/d2l-image-action.svg
 [ci-url]: https://travis-ci.org/BrightspaceUI/image-action
 [ci-image]: https://travis-ci.org/BrightspaceUI/image-action.svg
