@@ -6,7 +6,7 @@
 
 A [Polymer](https://www.polymer-project.org/1.0/)-based web component for D2L image actions, which are buttons (or links) associated with an image that perform an action when clicked.
 
-![screenshot of image actions](/screenshot.png)
+![screenshot of image actions](/screenshot.gif)
 
 For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
 
