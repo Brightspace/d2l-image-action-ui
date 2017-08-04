@@ -1,42 +1,74 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../d2l-icons/d2l-icon.html">
+<link rel="import" href="../d2l-link/d2l-link-behavior.html">
 <link rel="import" href="d2l-image-action-shared-styles.html">
+<!--
+`<d2l-image-action-link>` represents an icon-based link with a text label.
+Similar to `<d2l-image-action-button>`, a link should be used when navigating
+to a new URL.
+
+Think of this element as an `<a>` tag. It supports all the attributes `<a>` does:
+`download`, `href`, `hreflang`, `rel`, `target` and `type`.
+
+@demo demo/index.html
+@element d2l-image-action-link
+-->
 <dom-module id="d2l-image-action-link">
 	<template strip-whitespace>
 		<style include="d2l-image-action-shared-styles">
 			:host {
+				display: inline-block;
+			}
+			a {
 				@apply --d2l-image-action;
 			}
-			:host(:hover),
-			:host(:focus) {
+			a:hover,
+			a:focus {
 				@apply --d2l-image-action-hover;
 			}
-			:host > .d2l-image-action-content {
+			.d2l-image-action-content {
 				@apply --d2l-image-action-content;
 			}
-			:host(:hover) > .d2l-image-action-content,
-			:host(:focus) > .d2l-image-action-content {
+			a:hover > .d2l-image-action-content,
+			a:focus > .d2l-image-action-content {
 				@apply --d2l-image-action-content-hover;
 			}
 			.d2l-image-action-icon {
 				@apply --d2l-image-action-icon;
 			}
+			/* Polymer 2: shady DOM */
+			.d2l-image-action-icon:dir(rtl) {
+				@apply --d2l-image-action-icon-rtl;
+			}
+			/* Polymer 1: shady/shadow DOM, Polymer 2: shadow DOM */
 			:host-context([dir="rtl"]) .d2l-image-action-icon {
 				@apply --d2l-image-action-icon-rtl;
 			}
-			:host(:hover) .d2l-image-action-icon,
-			:host(:focus) .d2l-image-action-icon {
+			a:hover .d2l-image-action-icon,
+			a:focus .d2l-image-action-icon {
 				@apply --d2l-image-action-icon-hover;
 			}
 		</style>
-		<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
-		<span class="d2l-image-action-content"><content></content></span>
+		<a
+			download$="[[download]]"
+			href$="[[href]]"
+			hreflang="[[hreflang]]"
+			rel="[[rel]]"
+			target="[[target]]"
+			type="[[type]]">
+			<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
+			<span class="d2l-image-action-content"><slot></slot></span>
+		</a>
 	</template>
 	<script>
 		Polymer({
 			is: 'd2l-image-action-link',
-			extends: 'a',
+			behaviors: [window.D2L.PolymerBehaviors.Link.Behavior],
 			properties: {
+				/**
+				 * Corresponds to the iconset value for an underlying
+				 * [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg)
+				 */
 				icon: String
 			}
 		});

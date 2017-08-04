@@ -1,30 +1,28 @@
 <link rel="import" href="../polymer/polymer.html">
+<!--
+`<d2l-image-action-group>` is used to group a collection of
+`<d2l-image-action-link>` or `<d2l-image-action-button>` components together,
+providing proper spacing between each element.
+
+@demo demo/index.html
+@element d2l-image-action-group
+-->
 <dom-module id="d2l-image-action-group">
-	<template>
+	<template strip-whitespace>
 		<style>
 			:host {
 				display: inline-block;
 				line-height: 0;
 			}
-			:host ::content > button[is="d2l-image-action"],
-			:host ::content > a[is="d2l-image-action-link"] {
+			.d2l-image-action-group-container {
+				margin-right: -1.2rem;
+			}
+			.d2l-image-action-group-container ::slotted(d2l-image-action-button),
+			.d2l-image-action-group-container ::slotted(d2l-image-action-link) {
 				margin-right: 1.2rem;
 			}
-			:host ::content > button[is="d2l-image-action"]:last-child,
-			:host ::content > a[is="d2l-image-action-link"]:last-child {
-				margin-right: 0;
-			}
-			:host-context([dir="rtl"]) ::content > button[is="d2l-image-action"],
-			:host-context([dir="rtl"]) ::content > a[is="d2l-image-action-link"] {
-				margin-right: 0;
-				margin-left: 1.2rem;
-			}
-			:host-context([dir="rtl"]) ::content > button[is="d2l-image-action"]:last-child,
-			:host-context([dir="rtl"]) ::content > a[is="d2l-image-action-link"]:last-child {
-				margin-left: 0;
-			}
 		</style>
-		<content></content>
+		<div class="d2l-image-action-group-container"><slot></slot></div>
 	</template>
 	<script>
 		Polymer({

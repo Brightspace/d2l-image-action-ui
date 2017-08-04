@@ -19,19 +19,31 @@ bower install d2l-image-action
 
 ## Usage
 
-Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-image-action.html`:
+Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-image-action.html` to get all three image-action web components:
 
 ```html
 <head>
-	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents-lite.min.js"></script>
-	<link rel="import" href="../d2l-image-action/d2l-image-action.html">
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="import" href="bower_components/d2l-image-action/d2l-image-action.html">
 </head>
 ```
 
-The native `<button>` element can now be extended to become an image-action:
+### Button-based actions
+
+Use `<d2l-image-action-button>` in cases where an action is being performed, and not a navigation. Actions are typically done using a `click` event handler. Think about times you'd use a native `<button>` element instead of an `<a>`.
 
 ```html
-<button is="d2l-image-action">Print</button>
+<d2l-image-action-button icon="d2l-tier1:print">Print</d2l-image-action-button>
+```
+
+### Link-based actions
+
+Alternatively, if you wish to perform a browser navigation when the action is clicked, use `<d2l-image-action-link>`. Think of places you'd use a native `<a>` element instead of a `<button>`.
+
+```html
+<d2l-image-action-link
+	href="settings.html"
+	icon="d2l-tier1:gear">Settings</d2l-image-action-link>
 ```
 
 ### Icons
@@ -41,23 +53,11 @@ As their name suggests, image-actions are intended to be used with an icon, spec
 The [d2l-icons](https://github.com/BrightspaceUI/icons) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the `tier1` category (for 18x18 icons) and reference them by key:
 
 ```html
-<link rel="import" href="../d2l-icons/tier1-icons.html">
+<link rel="import" href="bower_components/d2l-icons/tier1-icons.html">
 <button is="d2l-image-action" icon="d2l-tier1:print">Print</button>
 ```
 
 You can also create your own custom icon set -- simply follow [Polymer's documentation](https://github.com/PolymerElements/iron-iconset-svg).
-
-### Link-based actions
-
-Most of the time, image-actions are wired up to a `click` event, so the native `<button>` is the most semantically suitable element to use. Sometimes however, you may wish to perform a browser navigation when the action is clicked. In these cases, an anchor (`<a>`) element is more appropriate.
-
-For link-based actions, extend the native `<a>` element with `d2l-image-action-link`:
-
-```html
-<a is="d2l-image-action-link"
-	href="settings.html"
-	icon="d2l-tier1:gear">Settings</a>
-```
 
 ### Groups of image-actions
 
@@ -65,21 +65,35 @@ Often, multiple image-actions will appear together as a group. In order to prope
 
 ```html
 <d2l-image-action-group>
-	<button is="d2l-image-action">Action 1</button>
-	<a is="d2l-image-action-link">Action 2</a>
-	<button is="d2l-image-action">Action 3</button>
+	<d2l-image-action-button>Action 1</d2l-image-action-button>
+	<d2l-image-action-link>Action 2</d2l-image-action-link>
+	<d2l-image-action-button>Action 3</d2l-image-action-button>
 </d2l-image-action-gorup>
 ```
 
-### Usage in Production
+## Developing, Testing and Contributing
 
-In production, it's recommended to use a build tool like [Vulcanize](https://github.com/Polymer/vulcanize) to combine all your web components into a single import file. [More from the Polymer Docs: Optimize for Production](https://www.polymer-project.org/1.0/tools/optimize-for-production.html)...
+After cloning the repo, run `npm install` to install dependencies.
 
-## Coding styles
+If you don't have it already, install the [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli) globally:
 
-See the [Best Practices & Style Guide](https://github.com/Brightspace/valence-ui-docs/wiki/Best-Practices-&-Style-Guide) for information on naming conventions, plus information about the [EditorConfig](http://editorconfig.org) rules used in this repo.
+```shell
+npm install -g polymer-cli
+```
+
+To start a [local web server](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#serve) that hosts the demo page and tests:
+
+```shell
+polymer serve
+```
+
+To lint ([eslint](http://eslint.org/) and [Polymer lint](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#lint)):
+
+```shell
+npm run lint
+```
 
 [bower-url]: http://bower.io/search/?q=d2l-image-action
 [bower-image]: https://img.shields.io/bower/v/d2l-image-action.svg
 [ci-url]: https://travis-ci.org/BrightspaceUI/image-action
-[ci-image]: https://travis-ci.org/BrightspaceUI/image-action.svg?branch=master
+[ci-image]: https://travis-ci.org/BrightspaceUI/image-action.svg

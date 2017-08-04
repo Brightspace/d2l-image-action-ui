@@ -1,0 +1,85 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../d2l-button/d2l-button-behavior.html">
+<link rel="import" href="../d2l-icons/d2l-icon.html">
+<link rel="import" href="d2l-image-action-shared-styles.html">
+<!--
+`<d2l-image-action-button>` represents an icon-based button with a text label.
+Similar to `<d2l-image-action-link>`, a button should be used when performing an action.
+
+Think of this element as a `<button>` tag. It supports all the attributes `<button>` does:
+`autofocus`, `disabled`, `form`, `formaction`, `formenctype`, `formmethod`, `formvalidate`, `formtarget`, `name` and `type`.
+
+@demo demo/index.html
+@element d2l-image-action-button
+@hero screenshot.gif
+-->
+<dom-module id="d2l-image-action-button">
+	<template strip-whitespace>
+		<style include="d2l-image-action-shared-styles">
+			:host {
+				display: inline-block;
+			}
+			button {
+				font-family: inherit;
+				@apply --d2l-image-action;
+			}
+			/* Firefox includes a hidden border which messes up button dimensions */
+			button::-moz-focus-inner {
+				border: 0;
+			}
+			button:hover,
+			button:focus {
+				@apply --d2l-image-action-hover;
+			}
+			.d2l-image-action-content {
+				@apply --d2l-image-action-content;
+			}
+			button:hover > .d2l-image-action-content,
+			button:focus > .d2l-image-action-content {
+				@apply --d2l-image-action-content-hover;
+			}
+			.d2l-image-action-icon {
+				@apply --d2l-image-action-icon;
+			}
+			/* Polymer 2: shady DOM */
+			.d2l-image-action-icon:dir(rtl) {
+				@apply --d2l-image-action-icon-rtl;
+			}
+			/* Polymer 1: shady/shadow DOM, Polymer 2: shadow DOM */
+			:host-context([dir="rtl"]) .d2l-image-action-icon {
+				@apply --d2l-image-action-icon-rtl;
+			}
+			button:hover .d2l-image-action-icon,
+			button:focus .d2l-image-action-icon {
+				@apply --d2l-image-action-icon-hover;
+			}
+		</style>
+		<button
+			disabled$=[[disabled]]
+			autofocus$=[[autofocus]]
+			form$=[[form]]
+			formaction$=[[formaction]]
+			formenctype$=[[formenctype]]
+			formmethod$=[[formmethod]]
+			formnovalidate$=[[formnovalidate]]
+			formtarget$=[[formtarget]]
+			name$=[[name]]
+			type$=[[type]]>
+			<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
+			<span class="d2l-image-action-content"><slot></slot></span>
+		</button>
+	</template>
+	<script>
+		Polymer({
+			is: 'd2l-image-action-button',
+			behaviors: [window.D2L.PolymerBehaviors.Button.Behavior],
+			/**
+			 * Corresponds to the iconset value for an underlying
+			 * [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg)
+			 */
+			properties: {
+				icon: String
+			}
+		});
+	</script>
+</dom-module>
