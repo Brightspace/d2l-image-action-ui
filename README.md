@@ -39,6 +39,7 @@ Use `<d2l-image-action-button>` in cases where an action is being performed, and
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="../d2l-icons/tier1-icons.html">
     <link rel="import" href="d2l-image-action-button.html">
     <custom-style include="d2l-typography">
       <style is="custom-style" include="d2l-typography"></style>
@@ -75,6 +76,7 @@ Alternatively, if you wish to perform a browser navigation when the action is cl
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="../d2l-icons/tier1-icons.html">
     <link rel="import" href="d2l-image-action-link.html">
     <custom-style include="d2l-typography">
       <style is="custom-style" include="d2l-typography"></style>
@@ -126,8 +128,8 @@ Often, multiple image-actions will appear together as a group. In order to prope
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../d2l-typography/d2l-typography.html">
-    <link rel="import" href="d2l-image-action-group.html">
-    <link rel="import" href="d2l-image-action-link.html">
+    <link rel="import" href="../d2l-icons/tier1-icons.html">
+    <link rel="import" href="d2l-image-action.html">
     <custom-style include="d2l-typography">
       <style is="custom-style" include="d2l-typography"></style>
     </custom-style>
