@@ -2,17 +2,12 @@
 <link rel="import" href="../d2l-icons/d2l-icon.html">
 <link rel="import" href="../d2l-link/d2l-link-behavior.html">
 <link rel="import" href="d2l-image-action-shared-styles.html">
+
 <!--
-`<d2l-image-action-link>` represents an icon-based link with a text label.
-Similar to `<d2l-image-action-button>`, a link should be used when navigating
-to a new URL.
-
-Think of this element as an `<a>` tag. It supports all the attributes `<a>` does:
-`download`, `href`, `hreflang`, `rel`, `target` and `type`.
-
-@demo demo/index.html
-@element d2l-image-action-link
+`d2l-image-action-link`
+Polymer-based icon link with a text label.
 -->
+
 <dom-module id="d2l-image-action-link">
 	<template strip-whitespace>
 		<style include="d2l-image-action-shared-styles">
@@ -63,14 +58,16 @@ Think of this element as an `<a>` tag. It supports all the attributes `<a>` does
 	<script>
 		Polymer({
 			is: 'd2l-image-action-link',
+
 			behaviors: [D2L.PolymerBehaviors.Link.Behavior],
+
 			properties: {
 				/**
-				 * Corresponds to the iconset value for an underlying
-				 * [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg)
+				 * Name of icon (ex. [iconset-name:icon-id]) for underlying [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg).
 				 */
 				icon: String
 			}
+
 		});
 	</script>
 </dom-module>
