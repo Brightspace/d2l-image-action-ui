@@ -24,8 +24,8 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyf
 
 ```html
 <head>
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-	<link rel="import" href="bower_components/d2l-image-action/d2l-image-action.html">
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../d2l-image-action/d2l-image-action.html">
 </head>
 ```
 
@@ -33,18 +33,74 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyf
 
 Use `<d2l-image-action-button>` in cases where an action is being performed, and not a navigation. Actions are typically done using a `click` event handler. Think about times you'd use a native `<button>` element instead of an `<a>`.
 
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="d2l-image-action-button.html">
+    <custom-style include="d2l-typography">
+      <style is="custom-style" include="d2l-typography"></style>
+    </custom-style>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      body {
+        color: var(--d2l-color-ferrite);
+        font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        letter-spacing: 0.01rem;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
-<d2l-image-action-button icon="d2l-tier1:print">Print</d2l-image-action-button>
+<d2l-image-action-button icon="d2l-tier1:bookmark-hollow">Bookmark</d2l-image-action-button>
 ```
 
 ### Link-based actions
 
 Alternatively, if you wish to perform a browser navigation when the action is clicked, use `<d2l-image-action-link>`. Think of places you'd use a native `<a>` element instead of a `<button>`.
 
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="d2l-image-action-link.html">
+    <custom-style include="d2l-typography">
+      <style is="custom-style" include="d2l-typography"></style>
+    </custom-style>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      body {
+        color: var(--d2l-color-ferrite);
+        font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        letter-spacing: 0.01rem;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
-<d2l-image-action-link
-	href="settings.html"
-	icon="d2l-tier1:gear">Settings</d2l-image-action-link>
+<d2l-image-action-link href="settings.html" icon="d2l-tier1:gear">
+  Settings
+</d2l-image-action-link>
 ```
 
 ### Icons
@@ -54,7 +110,7 @@ As their name suggests, image-actions are intended to be used with an icon, spec
 The [d2l-icons](https://github.com/BrightspaceUI/icons) component exposes all of the D2L icons as `iron-iconset-svg` sources -- simply import them using the `tier1` category (for 18x18 icons) and reference them by key:
 
 ```html
-<link rel="import" href="bower_components/d2l-icons/tier1-icons.html">
+<link rel="import" href="../d2l-icons/tier1-icons.html">
 <button is="d2l-image-action" icon="d2l-tier1:print">Print</button>
 ```
 
@@ -64,12 +120,43 @@ You can also create your own custom icon set -- simply follow [Polymer's documen
 
 Often, multiple image-actions will appear together as a group. In order to properly space the actions out, wrap them in a `<d2l-image-action-group>` custom element:
 
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="d2l-image-action-group.html">
+    <link rel="import" href="d2l-image-action-link.html">
+    <custom-style include="d2l-typography">
+      <style is="custom-style" include="d2l-typography"></style>
+    </custom-style>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      body {
+        color: var(--d2l-color-ferrite);
+        font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        letter-spacing: 0.01rem;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
 <d2l-image-action-group>
-	<d2l-image-action-button>Action 1</d2l-image-action-button>
-	<d2l-image-action-link>Action 2</d2l-image-action-link>
-	<d2l-image-action-button>Action 3</d2l-image-action-button>
-</d2l-image-action-gorup>
+  <d2l-image-action-button icon="d2l-tier1:print">Print</d2l-image-action-button>
+  <d2l-image-action-link icon="d2l-tier1:gear" href="http://www.google.ca">
+    Settings
+  </d2l-image-action-link>
+  <d2l-image-action-button icon="d2l-tier1:help">Help</d2l-image-action-button>
+</d2l-image-action-group>
 ```
 
 ## Developing, Testing and Contributing
