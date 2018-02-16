@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../d2l-icons/d2l-icon.html">
 <link rel="import" href="../d2l-link/d2l-link-behavior.html">
+<link rel="import" href="../d2l-polymer-behaviors/d2l-focusable-behavior.html">
 <link rel="import" href="d2l-image-action-shared-styles.html">
 
 <!--
@@ -45,6 +46,7 @@ Polymer-based icon link with a text label.
 			}
 		</style>
 		<a
+			class="d2l-focusable"
 			download$="[[download]]"
 			href$="[[href]]"
 			hreflang="[[hreflang]]"
@@ -59,7 +61,10 @@ Polymer-based icon link with a text label.
 		Polymer({
 			is: 'd2l-image-action-link',
 
-			behaviors: [D2L.PolymerBehaviors.Link.Behavior],
+			behaviors: [
+				D2L.PolymerBehaviors.Link.Behavior,
+				D2L.PolymerBehaviors.FocusableBehavior
+			],
 
 			properties: {
 				/**
