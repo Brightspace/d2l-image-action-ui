@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<title>d2l-text-input test</title>
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<script src="../../web-component-tester/browser.js"></script>
+		<link rel="import" href="../../iron-test-helpers/mock-interactions.html">
+		<link rel="import" href="../../d2l-icons/tier1-icons.html">
+		<link rel="import" href="../d2l-image-action-button.html">
+	</head>
+	<body>
+		<test-fixture id="basic">
+			<template>
+				<d2l-image-action-button icon="d2l-tier2:delete"><span>Clear All</span></d2l-image-action-button>
+			</template>
+		</test-fixture>
+		<script>
+			describe('d2l-image-action-button', function() {
+
+				var elem;
+
+				describe('focus management', function() {
+
+					beforeEach(function() {
+						elem = fixture('basic');
+					});
+
+					it('should fire focus/blur events when button element is focused', function(done) {
+						var nFocusEvents = 0;
+						var nBlurEvents = 0;
+						elem.addEventListener('focus', function() {
+							nFocusEvents += 1;
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								expect(nFocusEvents).to.equal(1);
+								MockInteractions.blur(elem.$$('button'));
+							});
+						});
+						elem.addEventListener('blur', function() {
+							nBlurEvents += 1;
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								assert.equal(nBlurEvents, 1, 'one blur event fired');
+								expect(nBlurEvents).to.equal(1);
+								done();
+							});
+						});
+						MockInteractions.focus(elem.$$('button'));
+					});
+
+					it('should fire focus/blur events when custom element is focused', function(done) {
+						var nFocusEvents = 0;
+						var nBlurEvents = 0;
+						elem.addEventListener('focus', function() {
+							nFocusEvents += 1;
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								expect(nFocusEvents).to.equal(1);
+								MockInteractions.blur(elem);
+							});
+						});
+						elem.addEventListener('blur', function() {
+							nBlurEvents += 1;
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								assert.equal(nBlurEvents, 1, 'one blur event fired');
+								expect(nBlurEvents).to.equal(1);
+								done();
+							});
+						});
+						MockInteractions.focus(elem);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
