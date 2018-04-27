@@ -54,8 +54,6 @@
 						var nFocusEvents = 0;
 						var nBlurEvents = 0;
 						elem.addEventListener('focus', function() {
-							console.log('got the focus')
-
 							nFocusEvents += 1;
 							// setTimeout to wait for potentially more, erroneous events
 							setTimeout(function() {
@@ -65,7 +63,6 @@
 						});
 						elem.addEventListener('blur', function() {
 							nBlurEvents += 1;
-							console.log('got the blur')
 							// setTimeout to wait for potentially more, erroneous events
 							setTimeout(function() {
 								assert.equal(nBlurEvents, 1, 'one blur event fired');
