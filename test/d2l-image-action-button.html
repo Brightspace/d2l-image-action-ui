@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<title>d2l-text-input test</title>
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<script src="../../web-component-tester/browser.js"></script>
+		<link rel="import" href="../../iron-test-helpers/mock-interactions.html">
+		<link rel="import" href="../../d2l-icons/tier1-icons.html">
+		<link rel="import" href="../d2l-image-action-button.html">
+	</head>
+	<body>
+		<test-fixture id="basic">
+			<template>
+				<d2l-image-action-button icon="d2l-tier2:delete"><span>Clear All</span></d2l-image-action-button>
+			</template>
+		</test-fixture>
+		<script>
+			describe('d2l-image-action-button', function() {
+
+				var elem;
+
+				describe('focusable behavior', function() {
+
+					beforeEach(function() {
+						elem = fixture('basic');
+					});
+
+					it('should give button element focusable class', function() {
+						expect(elem.$$('button').classList.contains('d2l-focusable'), 'missing d2l-focusable class').to.equal(true);
+					});
+
+					it('includes focusable behavior', function() {
+						expect(elem.behaviors).contains(D2L.PolymerBehaviors.FocusableBehavior);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

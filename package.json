@@ -7,9 +7,11 @@
   },
   "scripts": {
     "postinstall": "polymer install --variants",
-    "test": "npm run test:lint:js && npm run test:lint:wc",
+    "test": "npm run test:lint && npm run test:local",
+    "test:lint": "npm run test:lint:js && npm run test:lint:wc",
     "test:lint:js": "eslint *.html",
-    "test:lint:wc": "polymer lint -i *.html"
+    "test:lint:wc": "polymer lint -i *.html",
+    "test:local": "polymer test --skip-plugin sauce"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
