@@ -21,56 +21,18 @@
 
 				var elem;
 
-				describe('focus management', function() {
+				describe('focusable behavior', function() {
 
 					beforeEach(function() {
 						elem = fixture('basic');
 					});
 
-					it('should fire focus/blur events when custom element is focused', function(done) {
-						var nFocusEvents = 0;
-						var nBlurEvents = 0;
-						elem.addEventListener('focus', function() {
-							nFocusEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								expect(nFocusEvents).to.equal(1);
-								MockInteractions.blur(elem);
-							});
-						});
-						elem.addEventListener('blur', function() {
-							nBlurEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								assert.equal(nBlurEvents, 1, 'one blur event fired');
-								expect(nBlurEvents).to.equal(1);
-								done();
-							});
-						});
-						MockInteractions.focus(elem);
+					it('should give button element focusable class', function() {
+						expect(elem.$$('button').classList.contains('d2l-focusable'), 'missing d2l-focusable class').to.equal(true);
 					});
 
-					it.only('should fire focus/blur events when button element is focused', function(done) {
-						var nFocusEvents = 0;
-						var nBlurEvents = 0;
-						elem.addEventListener('focus', function() {
-							nFocusEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								expect(nFocusEvents).to.equal(1);
-								MockInteractions.blur(elem.$$('button'));
-							});
-						});
-						elem.addEventListener('blur', function() {
-							nBlurEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								assert.equal(nBlurEvents, 1, 'one blur event fired');
-								expect(nBlurEvents).to.equal(1);
-								done();
-							});
-						});
-						MockInteractions.focus(elem.$$('button'));
+					it('includes focusable behavior', function() {
+						expect(elem.behaviors).contains(D2L.PolymerBehaviors.FocusableBehavior);
 					});
 				});
 			});
