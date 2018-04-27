@@ -61,8 +61,6 @@ Polymer-based icon button with a text label. Do not use for navigation... use `d
 			formnovalidate$=[[formnovalidate]]
 			formtarget$=[[formtarget]]
 			name$=[[name]]
-			on-blur="_handleBlur"
-			on-focus="_handleFocus"
 			type$=[[type]]>
 			<d2l-icon icon="[[icon]]" class="d2l-image-action-icon"></d2l-icon>
 			<span class="d2l-image-action-content"><slot></slot></span>
@@ -79,43 +77,10 @@ Polymer-based icon button with a text label. Do not use for navigation... use `d
 
 			properties: {
 				/**
-				 * Fired when the button receives focus.
-				 *
-				 * @event focus
-				*/
-				/**
-				 * Fired when the button loses focus.
-				 *
-				 * @event blur
-				*/
-
-				/**
 				 * Name of icon (ex. [iconset-name:icon-id]) for underlying [Polymer iron-iconset-svg](https://github.com/PolymerElements/iron-iconset-svg).
 				 */
 				icon: String
 			},
-
-			_handleFocus: function() {
-				if (!Polymer.Element && !Polymer.Settings.useShadow) {
-					// This custom focus event is only needed for Polymer 1. We should
-					// be able to remove this event once we move to Polymer 2.
-					this.dispatchEvent(new CustomEvent(
-						'focus',
-						{bubbles: false}
-					));
-				}
-			},
-
-			_handleBlur: function() {
-				if (!Polymer.Element && !Polymer.Settings.useShadow) {
-					// This custom focus event is only needed for Polymer 1. We should
-					// be able to remove this event once we move to Polymer 2.
-					this.dispatchEvent(new CustomEvent(
-						'blur',
-						{bubbles: false}
-					));
-				}
-			}
 		});
 	</script>
 </dom-module>

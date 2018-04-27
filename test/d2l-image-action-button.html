@@ -27,29 +27,6 @@
 						elem = fixture('basic');
 					});
 
-					it('should fire focus/blur events when button element is focused', function(done) {
-						var nFocusEvents = 0;
-						var nBlurEvents = 0;
-						elem.addEventListener('focus', function() {
-							nFocusEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								expect(nFocusEvents).to.equal(1);
-								MockInteractions.blur(elem.$$('button'));
-							});
-						});
-						elem.addEventListener('blur', function() {
-							nBlurEvents += 1;
-							// setTimeout to wait for potentially more, erroneous events
-							setTimeout(function() {
-								assert.equal(nBlurEvents, 1, 'one blur event fired');
-								expect(nBlurEvents).to.equal(1);
-								done();
-							});
-						});
-						MockInteractions.focus(elem.$$('button'));
-					});
-
 					it('should fire focus/blur events when custom element is focused', function(done) {
 						var nFocusEvents = 0;
 						var nBlurEvents = 0;
@@ -71,6 +48,32 @@
 							});
 						});
 						MockInteractions.focus(elem);
+					});
+
+					it.only('should fire focus/blur events when button element is focused', function(done) {
+						var nFocusEvents = 0;
+						var nBlurEvents = 0;
+						elem.addEventListener('focus', function() {
+							console.log('got the focus')
+
+							nFocusEvents += 1;
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								expect(nFocusEvents).to.equal(1);
+								MockInteractions.blur(elem.$$('button'));
+							});
+						});
+						elem.addEventListener('blur', function() {
+							nBlurEvents += 1;
+							console.log('got the blur')
+							// setTimeout to wait for potentially more, erroneous events
+							setTimeout(function() {
+								assert.equal(nBlurEvents, 1, 'one blur event fired');
+								expect(nBlurEvents).to.equal(1);
+								done();
+							});
+						});
+						MockInteractions.focus(elem.$$('button'));
 					});
 				});
 			});
