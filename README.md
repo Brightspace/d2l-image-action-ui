@@ -4,7 +4,6 @@
 This repo has been deprecated. Please use subtle buttons (https://github.com/BrightspaceUI/button#subtle-button).
 
 # d2l-image-action
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/BrightspaceUI/image-action)
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
